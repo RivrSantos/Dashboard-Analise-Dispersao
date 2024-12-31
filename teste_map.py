@@ -2,10 +2,9 @@ import pandas as pd
 import streamlit as st
 import pydeck as pdk
 
-# st.logo('carmo.png')
 st.sidebar.image("inmotors.png")
-tab_moto= pd.read_csv("C:/Users/user/Desktop/WORKING_SQL/Relatorios/cordenadas.csv")
-tabg= pd.read_csv("C:/Users/user/Desktop/WORKING_SQL/genero.csv")
+tab_moto= pd.read_csv("cordenadas.csv")
+tabg= pd.read_csv("genero.csv")
 tot= tabg.median()
 def maps():
     df= pd.DataFrame(tab_moto)
