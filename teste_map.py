@@ -36,12 +36,12 @@ def maps():
 
     container_map.info('🌎 . Os dados são de fonte local, demonstrando a dispersão geográfica de clientes em Montes Claros e região')
 
-maps()
 with st.popover("ANALISE"):
     st.markdown("Em resumo, a análise de dispersão geográfica é uma ferramenta poderosa para otimizar campanhas de publicidade, permitindo direcionar recursos, personalizar mensagens e maximizar o retorno sobre o investimento. Ao compreender como o público está distribuído no espaço, as empresas podem tomar decisões mais estratégicas e alcançar melhores resultados.")
 st.sidebar.metric(label="TOTAL DE ATENDIMENTOS", value=76,
                   delta='2.1%', delta_color='normal')
 
+maps()
 gen= st.sidebar.radio(
     "Percentual Genero",
     ["Homens", "Mulheres"],
