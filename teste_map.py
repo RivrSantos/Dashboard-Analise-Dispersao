@@ -9,14 +9,14 @@ tabg= pd.read_csv("genero.csv")
 
 def conc():
     cont= st.container(border= True, height= 100)
-    cont.markdown("")
+    cont.markdown("A análise de dispersão geográfica é uma ferramenta poderosa para otimizar campanhas de publicidade, permitindo direcionar recursos, personalizar mensagens e maximizar o retorno sobre o investimento. Ao compreender como nosso público está distribuído no espaço, podemos tomar decisões estratégicas para alcançar melhores resultados.")
     
 def maps():
     st.sidebar.metric(label="TOTAL DE ATENDIMENTOS", value=76,
                       delta='2.1%', delta_color='normal')
     df= pd.DataFrame(tab_moto)
-    container_map = st.container(border=True, height=680)
-    container_map.subheader('ANALISE - DISPERSAO DEMOGRAFICA', divider=True)
+    container_map = st.container(border=True, height=700)
+    container_map.subheader('RELATORIO - DISPERSAO DEMOGRAFICA', divider=True)
     container_map.pydeck_chart(pdk.Deck(
         initial_view_state=pdk.ViewState(
             latitude=-16.71824512937061,
@@ -68,7 +68,7 @@ def maps():
     
 maps()
 
-texto= st.sidebar.button("A análise de dispersão geográfica é uma ferramenta poderosa para otimizar campanhas de publicidade, permitindo direcionar recursos, personalizar mensagens e maximizar o retorno sobre o investimento. Ao compreender como nosso público está distribuído no espaço, podemos tomar decisões estratégicas para alcançar melhores resultados.")
+texto= st.sidebar.button("Resumo")
 if texto == True:
     conc()
 elif texto == False:
