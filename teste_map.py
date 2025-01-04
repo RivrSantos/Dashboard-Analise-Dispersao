@@ -3,12 +3,13 @@ import streamlit as st
 import pydeck as pdk
 import time
 
+
+tab_moto= pd.read_csv("cordenadas.csv") # arquivo principal
 st.sidebar.image("Black.png")
 
 
 # funçao para exibir as cordenadas em um dataframe
 def lat_lon():
-    tab_moto= pd.read_csv("cordenadas.csv")
     st.sidebar.dataframe(tab_moto, hide_index= True)
     
 
@@ -74,8 +75,9 @@ def maps():
 
     container_map.info('🌎. Os dados são de fonte local, demonstrando a dispersão geográfica de clientes em Montes Claros e região')
 
+# chamada principal
+maps()
 
-  
 texto= st.sidebar.button("Resumo")
 if texto == True:
     conc()
@@ -84,5 +86,3 @@ cord= st.sidebar.button("CORDENADAS")
 if cord == True:
     lat_lon()
 
-# chamada principal
-maps()
