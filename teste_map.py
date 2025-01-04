@@ -4,8 +4,8 @@ import pydeck as pdk
 import time
 
 st.sidebar.image("Black.png")
-tab_moto= pd.read_csv("C:/Users/user/Desktop/WORKING_SQL/Relatorios/cordenadas.csv")
-tabg= pd.read_csv("C:/Users/user/Desktop/WORKING_SQL/genero.csv")
+tab_moto= pd.read_csv("cordenadas.csv")
+tabg= pd.read_csv("genero.csv")
 
 def conc():
     cont= st.container(border= True, height= 100)
