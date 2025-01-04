@@ -4,13 +4,21 @@ import pydeck as pdk
 import time
 
 st.sidebar.image("Black.png")
-tab_moto= pd.read_csv("cordenadas.csv")
-tabg= pd.read_csv("genero.csv")
 
-def conc():
-    cont= st.container(border= True, height= 100)
-    cont.markdown("A análise de dispersão geográfica é uma ferramenta poderosa para otimizar campanhas de publicidade, permitindo direcionar recursos, personalizar mensagens e maximizar o retorno sobre o investimento. Ao compreender como nosso público está distribuído no espaço, podemos tomar decisões estratégicas para alcançar melhores resultados.")
+
+# funçao para exibir as cordenadas em um dataframe
+def lat_lon():
+    tab_moto= pd.read_csv("cordenadas.csv")
+    st.sidebar.dataframe(tab_moto, hide_index= True)
     
+
+# funçao para exibir texto dentro de um container usando formato markdown
+def conc():
+    cont= st.container(border= True, height= 120)
+    cont.info("A análise de dispersão geográfica é uma ferramenta poderosa para otimizar campanhas de publicidade, permitindo direcionar recursos, personalizar mensagens e maximizar o retorno sobre o investimento. Ao compreender como nosso público está distribuído no espaço, podemos tomar decisões estratégicas para alcançar melhores resultados.")
+
+
+# funçao para exibiçao do mapa e suas determinadas cordenadas dentro de um container principal
 def maps():
     st.sidebar.metric(label="TOTAL DE ATENDIMENTOS", value=76,
                       delta='2.1%', delta_color='normal')
@@ -36,7 +44,7 @@ def maps():
                 pickable=True,
                 coverage=3,
                 auto_highlight=True,
-                get_color="[20, 30, 75, 100]",
+                get_color="[120, 30, 75, 300]",
             ),
         ],
     ))
@@ -65,13 +73,16 @@ def maps():
         st.sidebar.divider()
 
     container_map.info('🌎. Os dados são de fonte local, demonstrando a dispersão geográfica de clientes em Montes Claros e região')
-    
-maps()
 
+
+  
 texto= st.sidebar.button("Resumo")
 if texto == True:
     conc()
-elif texto == False:
-    pass
-# st.sidebar.subheader("CORDENADAS")
-# st.sidebar.dataframe(tab_moto, hide_index= True)
+  
+cord= st.sidebar.button("CORDENADAS")
+if cord == True:
+    lat_lon()
+
+# chamada principal
+maps()
