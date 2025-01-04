@@ -6,7 +6,10 @@ import time
 st.sidebar.image("Black.png")
 tab_moto= pd.read_csv("C:/Users/user/Desktop/WORKING_SQL/Relatorios/cordenadas.csv")
 tabg= pd.read_csv("C:/Users/user/Desktop/WORKING_SQL/genero.csv")
-# cont= st.container(border= True, height= 60)
+
+def conc():
+    cont= st.container(border= True, height= 100)
+    cont.markdown("")
     
 def maps():
     st.sidebar.metric(label="TOTAL DE ATENDIMENTOS", value=76,
@@ -61,10 +64,14 @@ def maps():
     else:
         st.sidebar.divider()
 
-    container_map.info('🌎 . Os dados são de fonte local, demonstrando a dispersão geográfica de clientes em Montes Claros e região')
+    container_map.info('🌎. Os dados são de fonte local, demonstrando a dispersão geográfica de clientes em Montes Claros e região')
+    
 maps()
 
-
-
+texto= st.sidebar.button("A análise de dispersão geográfica é uma ferramenta poderosa para otimizar campanhas de publicidade, permitindo direcionar recursos, personalizar mensagens e maximizar o retorno sobre o investimento. Ao compreender como nosso público está distribuído no espaço, podemos tomar decisões estratégicas para alcançar melhores resultados.")
+if texto == True:
+    conc()
+elif texto == False:
+    pass
 # st.sidebar.subheader("CORDENADAS")
 # st.sidebar.dataframe(tab_moto, hide_index= True)
