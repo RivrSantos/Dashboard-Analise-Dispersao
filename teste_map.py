@@ -10,17 +10,11 @@ st.sidebar.image("Black.png")
 
 # funçao para exibir as cordenadas em um dataframe
 def lat_lon():
-     with st.spinner('carregando'):
-            time.sleep(2)
-            st.sidebar.dataframe(tab_moto, hide_index= True)
+   st.sidebar.dataframe(tab_moto, hide_index= True)
     
-
 # funçao para exibir texto dentro de um container usando formato markdown
 def conc():
-     with st.spinner('carregando'):
-            time.sleep(2)
-            st.info("A análise de dispersão geográfica é uma ferramenta poderosa para otimizar campanhas de publicidade, permitindo direcionar recursos, personalizar mensagens e maximizar o retorno sobre o investimento. Ao compreender como nosso público está distribuído no espaço, podemos tomar decisões estratégicas para alcançar melhores resultados.")
-
+     st.info("A análise de dispersão geográfica é uma ferramenta poderosa para otimizar campanhas de publicidade, permitindo direcionar recursos, personalizar mensagens e maximizar o retorno sobre o investimento. Ao compreender como nosso público está distribuído no espaço, podemos tomar decisões estratégicas para alcançar melhores resultados.")
 
 # funçao para exibiçao do mapa e suas determinadas cordenadas dentro de um container principal
 def maps():
@@ -60,19 +54,15 @@ def maps():
     )
 
     if gen == "Homens":
-        with st.spinner('carregando'):
-            time.sleep(2)
-            st.sidebar.subheader(". 83,9%")
-            st.sidebar.markdown(". Media cc: 250")
-            st.sidebar.markdown(". Ticket: R$ 28.042,13")
-            st.sidebar.divider()
+         st.sidebar.subheader(". 83,9%")
+         st.sidebar.markdown(". Media cc: 250")
+         st.sidebar.markdown(". Ticket: R$ 28.042,13")
+         st.sidebar.divider()
     elif gen == "Mulheres":
-        with st.spinner('carregando'):
-            time.sleep(2)
-            st.sidebar.subheader(". 16,1%")
-            st.sidebar.markdown(". Media cc: 150")
-            st.sidebar.markdown(". Ticket: R$ 17.212,24")
-            st.sidebar.divider()
+         st.sidebar.subheader(". 16,1%")
+         st.sidebar.markdown(". Media cc: 150")
+         st.sidebar.markdown(". Ticket: R$ 17.212,24")
+         st.sidebar.divider()
     else:
         st.sidebar.divider()
 
