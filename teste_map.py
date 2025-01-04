@@ -85,7 +85,7 @@ texto= st.sidebar.button("Resumo")
 if texto == True:
     conc()
   
-cord= st.sidebar.button("CORDENADAS")
+cord= st.sidebar.button("Cordenadas")
 if cord == True:
     lat_lon()
 
